@@ -65,7 +65,7 @@ const FeaturedSection = () => {
     );
 
   return (
-    <section className="w-full h-screen  text-foreground flex flex-col items-center justify-center p-4 overflow-hidden">
+    <section id="featured" className="w-full h-screen  text-foreground flex flex-col items-center justify-center p-4 overflow-hidden">
       {/* Previously Worked Section */}
       <div className="text-center mb-8 sm:mb-12 md:mb-16 max-w-5xl w-full">
         <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">
