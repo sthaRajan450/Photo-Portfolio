@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
 import WorksSection from "../components/WorksSection";
+import FeaturedSection from "../components/FeaturedSection";
 
 const Home = () => {
   return (
@@ -16,6 +17,8 @@ const Home = () => {
         <HeroSection />
         <AboutSection />
         <WorksSection />
+
+        <FeaturedSection />
       </main>
     </div>
   );
