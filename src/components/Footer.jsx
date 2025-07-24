@@ -52,7 +52,7 @@ const Footer = () => {
       <a
         href="#hero"
         onClick={scrollToTop}
-        className="mt-8 p-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition"
+        className="mt-8 p-3 bg-primary text-white rounded-full shadow-lg hover:bg-primary/80 transition"
         aria-label="Scroll to top"
       >
         <ArrowUp />

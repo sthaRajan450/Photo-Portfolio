@@ -71,7 +71,7 @@ const WorksSection = () => {
               alt={work.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 md:left-10 md:translate-x-0 text-muted-foreground bg-primary/20 p-6 rounded-xl max-w-md text-center md:text-left">
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 md:left-10 md:translate-x-0 text-muted-foreground bg-black/50   p-6 rounded-xl max-w-md text-center md:text-left">
               <h3 className="text-2xl font-bold mb-2 text-white">
                 {work.title}
               </h3>
