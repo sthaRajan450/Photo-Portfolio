@@ -53,7 +53,7 @@ const Navbar = () => {
             <span className="text-glow text-foreground">Manish</span>Photos
           </span>
         </a>
-
+ // Desktop Navigation
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8">
           {navItems.map((item, key) => (
