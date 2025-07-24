@@ -51,7 +51,7 @@ const FeaturedSection = () => {
           <img
             src={src}
             alt={alt}
-            className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain"
+            className="w-20 h-20 md:w-35 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain"
           />
         </a>
       ) : (
@@ -59,7 +59,7 @@ const FeaturedSection = () => {
           key={idx}
           src={src}
           alt={alt}
-          className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain transition hover:scale-110 duration-300"
+          className="w-20 h-20 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain transition hover:scale-110 duration-300"
         />
       )
     );
@@ -84,7 +84,7 @@ const FeaturedSection = () => {
         <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">
           Work Featured In
         </h1>
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mb-6">
+        <div className="flex flex-wrap justify-center gap-4 text-3xl sm:gap-6 md:gap-8 mb-6">
           {renderLogos(featuredLogos)}
         </div>
         <button className="px-4 py-2 text-sm sm:text-base md:text-lg bg-foreground text-background rounded-full shadow-md hover:scale-105 transition duration-300">

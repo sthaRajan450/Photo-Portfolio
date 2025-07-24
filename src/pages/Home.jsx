@@ -6,6 +6,7 @@ import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
 import WorksSection from "../components/WorksSection";
 import FeaturedSection from "../components/FeaturedSection";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -19,6 +20,8 @@ const Home = () => {
         <WorksSection />
 
         <FeaturedSection />
+
+        <Footer />
       </main>
     </div>
   );

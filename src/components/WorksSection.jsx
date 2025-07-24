@@ -9,10 +9,11 @@ import "swiper/css/pagination";
 const worksData = [
   {
     title: "Bhagwati Jatra",
-    description: "Experience the vibrant colors and energy of this historic festival.",
+    description:
+      "Experience the vibrant colors and energy of this historic festival.",
     image: "/works/bhagwatijatra.jpg",
   },
-  
+
   {
     title: "Daily Life 1",
     description: "Ordinary moments that tell extraordinary stories.",
@@ -70,12 +71,12 @@ const WorksSection = () => {
               alt={work.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 md:left-10 md:translate-x-0 text-white bg-black/50 p-6 rounded-xl max-w-md text-center md:text-left">
-              <h3 className="text-2xl font-bold mb-2 text-white">{work.title}</h3>
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 md:left-10 md:translate-x-0 text-muted-foreground bg-primary/20 p-6 rounded-xl max-w-md text-center md:text-left">
+              <h3 className="text-2xl font-bold mb-2 text-white">
+                {work.title}
+              </h3>
               <p className="mb-4 text-sm text-white">{work.description}</p>
-              <button className="bg-white  text-black px-4 py-2 rounded hover:bg-gray-200 transition">
-                Explore More
-              </button>
+              <button className="cosmic-button">Explore More</button>
             </div>
           </SwiperSlide>
         ))}
