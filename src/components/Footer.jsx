@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="max-h-2/3 flex flex-col justify-center items-center  text-foreground px-6"
+      className="min-h-screen flex flex-col justify-center items-center  text-foreground px-6"
     >
       <div className="max-w-4xl w-full flex flex-col gap-6 md:flex-row md:items-center justify-between">
         <a

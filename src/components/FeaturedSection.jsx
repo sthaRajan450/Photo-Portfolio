@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const workedLogos = [
   {
@@ -37,10 +38,37 @@ const featuredLogos = [
   { src: "/featured/ronb.jpg", alt: "RONB" },
 ];
 
+// Animation variant
+const fadeUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
+
 const FeaturedSection = () => {
   const renderLogos = (logos) =>
-    logos.map(({ src, alt, link }, idx) =>
-      link ? (
+    logos.map(({ src, alt, link }, idx) => {
+      const Image = (
+        <motion.img
+          src={src}
+          alt={alt}
+          className="w-20 h-20 md:w-24 md:h-24 object-contain"
+          custom={idx}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+        />
+      );
+
+      return link ? (
         <a
           key={idx}
           href={link}
@@ -48,46 +76,42 @@ const FeaturedSection = () => {
           rel="noopener noreferrer"
           className="transition hover:scale-110 duration-300"
         >
-          <img
-            src={src}
-            alt={alt}
-            className="w-20 h-20 md:w-35 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain"
-          />
+          {Image}
         </a>
       ) : (
-        <img
-          key={idx}
-          src={src}
-          alt={alt}
-          className="w-20 h-20 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain transition hover:scale-110 duration-300"
-        />
-      )
-    );
+        <div key={idx} className="transition hover:scale-110 duration-300">
+          {Image}
+        </div>
+      );
+    });
 
   return (
-    <section id="featured" className="w-full h-screen  text-foreground flex flex-col items-center justify-center p-4 overflow-hidden">
+    <section
+      id="featured"
+      className="w-full min-h-screen text-foreground flex flex-col items-center justify-center p-4"
+    >
       {/* Previously Worked Section */}
-      <div className="text-center mb-8 sm:mb-12 md:mb-16 max-w-5xl w-full">
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">
+      <div className="text-center mb-16 max-w-5xl w-full">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-8">
           Previously Worked
         </h1>
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mb-6">
+        <div className="flex flex-wrap justify-center gap-6 mb-6">
           {renderLogos(workedLogos)}
         </div>
-        <button className="px-4 py-2 text-sm sm:text-base md:text-lg bg-foreground text-background rounded-full shadow-md hover:scale-105 transition duration-300">
+        <button className="px-4 py-2 text-base bg-foreground text-background rounded-full shadow-md hover:scale-105 transition duration-300">
           See More
         </button>
       </div>
 
       {/* Featured In Section */}
       <div className="text-center max-w-5xl w-full">
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-8">
           Work Featured In
         </h1>
-        <div className="flex flex-wrap justify-center gap-4 text-3xl sm:gap-6 md:gap-8 mb-6">
+        <div className="flex flex-wrap justify-center gap-6 mb-6">
           {renderLogos(featuredLogos)}
         </div>
-        <button className="px-4 py-2 text-sm sm:text-base md:text-lg bg-foreground text-background rounded-full shadow-md hover:scale-105 transition duration-300">
+        <button className="px-4 py-2 text-base bg-foreground text-background rounded-full shadow-md hover:scale-105 transition duration-300">
           See More
         </button>
       </div>
